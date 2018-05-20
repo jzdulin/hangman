@@ -10,11 +10,17 @@ var randomWord_ = randomWord.replace(/[a-z]/g, '_ ')
 
 document.onkeyup = function(event) {
 
+    for (var i =0; i < randomWord.length; i++) {
+        if (userguess === randomWord.charAt(i)) {
+            randomWord_ = randomWord_.replace(randomWord_.charAt(i), computerword.charAt(i))
+            guesses++;
+        }
+    }
     if (guesses === 0) {
         losses++;
     }
     
-    if (computerword_ === computerword) {
+    if (randomWord_ === randomWord) {
         wins++;
     }
-}
+}   
