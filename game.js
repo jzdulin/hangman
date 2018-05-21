@@ -15,7 +15,17 @@ document.onkeyup = function(event) {
             randomWord_ = randomWord_.replace(randomWord_.charAt(i), computerword.charAt(i))
             guesses++;
         }
+
+        if (userguess !== computerword.charAt(i)) {
+            if (firstRow){
+                guesses--;
+                guessed.push(userguess);
+                firstRow = false;
+            }
+        }
     }
+
+    
     if (guesses === 0) {
         losses++;
     }
