@@ -10,6 +10,8 @@ var randomWord_ = randomWord.replace(/[a-z]/g, '_ ')
 
 document.onkeyup = function(event) {
 
+    var userguess = event.key.toLowerCase();
+    
     for (var i =0; i < randomWord.length; i++) {
         if (userguess === randomWord.charAt(i)) {
             randomWord_ = randomWord_.replace(randomWord_.charAt(i), computerword.charAt(i))
